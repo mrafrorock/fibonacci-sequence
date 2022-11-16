@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  api:
+    build:
+      dockerfile: Dockerfile.staging
+      context: .
+      target: staging
+    container_name: fibonacci-sequence-service-staging
+    env_file:
+      - .env.staging
+    command: npm run start:staging
+    ports:
+      - 8000:8000
+    restart: 'always'
+

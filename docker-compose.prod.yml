@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  api:
+    build:
+      dockerfile: Dockerfile.prod
+      context: .
+      target: production
+    container_name: fibonacci-sequence-service-prod
+    env_file:
+      - .env.prod
+    command: npm run start:prod
+    ports:
+      - 8000:8000
+    restart: 'always'
+
