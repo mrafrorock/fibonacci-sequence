@@ -1,5 +1,5 @@
 export const MESSAGE = {
   SEQUENCE: {
-    MAX_COUNT: 'Member count must be less than 100'
+    NUMBER_NOT_MATCH: 'Number must be between 1 and 100'
   }
 }

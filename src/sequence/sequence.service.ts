@@ -12,7 +12,7 @@ export class SequenceService {
    * @param memberCount
    */
   public async findSequenceNumbers(memberCount: number) {
-    if (memberCount > 100) throw new ConflictException(MESSAGE.SEQUENCE.MAX_COUNT)
+    if (memberCount > 100 || memberCount < 0) throw new ConflictException(MESSAGE.SEQUENCE.NUMBER_NOT_MATCH)
     try {
       const sequenceDto = new SequenceDto()
       sequenceDto.memberCount = memberCount
